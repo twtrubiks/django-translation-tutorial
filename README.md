@@ -2,11 +2,11 @@
 
 如何使用 Django 實作 translation  📝
 
-* [Youtube Tutorial PART 1 - django-translation-tutorial](xxx)
+* [Youtube Tutorial PART 1 - django-translation-tutorial](https://youtu.be/9zFCfnVgXjs)
 
-* [Youtube Tutorial PART 2 - django-translation-tutorial](xxx)
+* [Youtube Tutorial PART 2 - django-translation-tutorial](https://youtu.be/sz0cpt8I1fM)
 
-* [Youtube Tutorial PART 3 - django-translation-tutorial](xxx)
+* [Youtube Tutorial PART 3 - django-translation-tutorial](https://youtu.be/9njecageJvM)
 
 ## 簡介
 
@@ -485,6 +485,8 @@ the future:
 ```
 
 ### Internationalization: in JavaScript code
+
+* [Youtube Tutorial PART 3 - django-translation-tutorial](https://youtu.be/9njecageJvM)
 
 一定會有人問，那如果我是透過 javascript ，有辦法進行翻譯嗎:question:
 
