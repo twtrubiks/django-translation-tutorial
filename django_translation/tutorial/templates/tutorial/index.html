@@ -1,0 +1,92 @@
+{% load i18n bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorial</title>
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>django-translation-tutorial </h1>
+        </div>
+        {% get_current_language as LANGUAGE_CODE %}
+        <div class="well well-sm">LANGUAGE : {{LANGUAGE_CODE}}</div>
+
+        <form class="form-horizontal" action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{ redirect_to }}">
+            <div class="form-group">
+                <label class="control-label col-sm-2">LANGUAGE:</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="language">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                {{ language.name_local }} ({{ language.code }})
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Go</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="well well-sm">{{data}}</div>
+        <div class="well well-sm">{{output}}</div>
+
+        {# contextual-markers #}
+        <div class="well well-sm">{% trans "blue" context "color" %}</div>
+        <div class="well well-sm">{% trans "blue" context "mood" %}</div>
+
+        {# pluralization #}
+        <div class="well well-sm">{{pluralization}}</div>
+
+        {% comment %}Translators: Hello Django{% endcomment %}
+        <div class="well well-sm">{% trans "Hello Django" %}</div>
+
+        {# Translators: comment #}
+        <div class="well well-sm">{% trans "comment" %}</div>
+
+        {# Translators: var #}
+        {% trans "This is the title" as the_title %}
+        <div class="well well-sm">{{ the_title }}</div>
+
+        {# Translators: "{% blocktrans %}....{% endblocktrans %} #}
+        <div class="well well-sm">{%blocktrans with d=data %}show {{d}}{%endblocktrans%}</div>
+        <div class="well well-sm">{%blocktrans with data as d %}show {{d}}{%endblocktrans%}</div>
+
+        {# Translators: trimmed option #}
+        <div class="well well-sm">
+        {% blocktrans trimmed %}
+        First sentence.
+        Second sentence.
+        {% endblocktrans %}
+        </div>
+
+        {# Translators: noop #}
+        <div class="well well-sm">{% trans "myvar" noop  %}</div>
+
+        {# Using the JavaScript translation catalog #}
+        {# https://docs.djangoproject.com/en/2.1/topics/i18n/translation/#using-the-javascript-translation-catalog #}
+        <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+        <script type="text/javascript" src="{% static "js/index.js" %}"></script>
+    </div>
+
+</body>
+</html>

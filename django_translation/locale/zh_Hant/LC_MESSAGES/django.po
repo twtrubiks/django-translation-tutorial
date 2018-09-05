@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-05 10:17+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: django_translation/settings.py:127
+msgid "English"
+msgstr ""
+
+#: django_translation/settings.py:128
+msgid "Traditional Chinese"
+msgstr ""
+
+#: django_translation/settings.py:129
+msgid "Simplified Chinese"
+msgstr ""
+
+#. Translators: contextual-markers
+#: tutorial/templates/tutorial/index.html:54 tutorial/views.py:15
+msgctxt "color"
+msgid "blue"
+msgstr "藍色"
+
+#. Translators: contextual-markers
+#: tutorial/templates/tutorial/index.html:55 tutorial/views.py:17
+msgctxt "mood"
+msgid "blue"
+msgstr "鬱悶"
+
+#. Translators: Hello Django
+#: tutorial/templates/tutorial/index.html:61
+msgid "Hello Django"
+msgstr "哈摟 Django"
+
+#. Translators: comment
+#: tutorial/templates/tutorial/index.html:64
+msgid "comment"
+msgstr "註解"
+
+#. Translators: var
+#: tutorial/templates/tutorial/index.html:67
+msgid "This is the title"
+msgstr "這是標題"
+
+#. Translators: "{% blocktrans %}....{% endblocktrans %}
+#: tutorial/templates/tutorial/index.html:71
+#: tutorial/templates/tutorial/index.html:72
+#, python-format
+msgid "show %(d)s"
+msgstr "%(d)s 顯示"
+
+#: tutorial/templates/tutorial/index.html:76
+msgid "First sentence. Second sentence."
+msgstr "第一. 第二"
+
+#. Translators: noop
+#: tutorial/templates/tutorial/index.html:83
+msgid "myvar"
+msgstr "我的 var"
+
+#: tutorial/views.py:8
+msgid "Hello"
+msgstr "哈摟"
+
+#: tutorial/views.py:12
+#, python-format
+msgid "Today is %(month)s / %(day)s."
+msgstr "今天是 %(month)s 月 %(day)s 日"
+
+#: tutorial/views.py:22
+#, python-format
+msgid "There is %(count)d %(name)s object available."
+msgid_plural "There are %(count)d %(name)s objects available."
+msgstr[0] "有 %(count)d 個 %(name)s 物件可用"

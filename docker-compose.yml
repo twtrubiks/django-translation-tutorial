@@ -1,0 +1,12 @@
+version: '3'
+services:
+
+    web:
+      build: ./django_translation
+      command: python manage.py runserver 0.0.0.0:8000
+      restart: always
+      volumes:
+        - ./django_translation:/docker_tutorial
+        # (HOST:CONTAINER)
+      ports:
+        - "8000:8000"
